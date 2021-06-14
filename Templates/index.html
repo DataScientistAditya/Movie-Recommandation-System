@@ -1,0 +1,90 @@
+  
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Search</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  
+</head>
+
+<body >
+  <div class="Image">
+    <img src="https://lh6.googleusercontent.com/QIphFoL8-Y9Jg5q4FM6NVYK9Lv7clLi5lZkhcWlwVSiRudrDSg6gQME3qPG9vsQdHUCqL5tgOt_y7k9kYsVlAZo=w16383" alt="Mighty Neurons" align="left" width=30>
+    <h1></h1>
+    </div>
+    <div class="BackGround_Image">
+      <img src="https://assets.nflxext.com/ffe/siteui/vlv3/8dc3f88b-a96a-4d8a-af9a-a69e6f3b2506/b2552a55-8439-4e7a-9cef-d42b787491b8/IN-en-20210524-popsignuptwoweeks-perspective_alpha_website_small.jpg" alt="BackGround_Image">
+    </div>
+ <div class="login">
+	<h1>Search Your Movies</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('Movies')}}"method="post">
+    	<input type="text" name="Movie_Name" placeholder="Search" required="required"/>
+        <button type="search" class="btn btn-primary btn-block btn-large">Search</button>
+    </form>
+</div>
+<div class="Out">
+  <img src="{{url}}" alt="" align="left" height=350 onerror="Move Poster" >
+  {{Your_Movie}}
+  <br>
+  <br>
+  <i>{{Title}}{{Name_T}}</i>
+  <br>
+  <br>
+  <i>{{Year}}{{YY}}</i>
+  <br>
+  <br>
+  <i>{{Director}}{{Name_D}}</i>
+  <br>
+  <br>
+  <i>{{Actors}}{{Name_A}}</i>
+  <br>
+  <br>
+  <i>{{IMDB}}{{Rating}}</i>
+  <br>
+</div>
+<div class="Recomands">
+  
+  <div class="row">
+  <div class="column">
+    <img src="{{rcm1}}" alt="" style="width:80%" align="right" onerror="Move Poster">
+  </div>
+  <div class="column">
+    <img src="{{rcm2}}" alt="" style="width:80%" align="right" onerror="Move Poster">
+  </div>
+  <div class="column">
+    <img src="{{rcm3}}" alt="" style="width:80%" align="right" onerror="Move Poster">
+  </div>
+</div>
+<div class="Out_Text">
+  <div class="rows">
+    <div class="columns">
+      <img src="{{rc1}}" alt="" style="width:100%" align="width" onerror="Move Poster">
+    </div>
+    <div class="columns">
+    <img src="{{rc2}}" alt="" style="width:100%" align="width" onerror="Move Poster">
+    </div>
+    <div class="columns">
+    <img src="{{rc3}}" alt="" style="width:100%" align="width" onerror="Move Poster">
+    </div>
+  </div>
+  <div class="rows">
+    <div class="columns">
+      <img src="{{rc4}}" alt="" style="width:100%" align="width" onerror="Move Poster">
+    </div>
+    <div class="columns">
+      <img src="{{rc5}}" alt="" style="width:100%" align="width" onerror="Move Poster">
+    </div>
+    <div class="columns">
+      <img src="{{rc6}}" alt="" style="width:100%" align="width" onerror="Move Poster">
+    </div>
+  </div>
+</body>
+</html>
